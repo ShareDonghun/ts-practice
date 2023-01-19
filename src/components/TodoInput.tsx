@@ -4,8 +4,8 @@ import { addTodo } from "../redux/modules/todoReducer";
 
 const TodoInput = () => {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
 
   return (
     <form>

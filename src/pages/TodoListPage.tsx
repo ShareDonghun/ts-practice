@@ -2,12 +2,13 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import TodoItem from "../components/TodoItem";
 import TodoInput from "../components/TodoInput";
+import { RootState } from "../redux/config/configStore";
 
 const TodoListPage = () => {
-  const todos = useSelector((state) => state.todoReducer.todos);
+  const todos = useSelector((state: RootState) => state.todoReducer.todos);
 
-  const todoItems = todos.filter((todo) => !todo.isCompleted);
-  const doneItems = todos.filter((todo) => todo.isCompleted);
+  const todoItems = todos.filter((todo: TodoItem) => !todo.isCompleted);
+  const doneItems = todos.filter((todo: TodoItem) => todo.isCompleted);
 
   return (
     <TodoListContainer>
@@ -16,13 +17,13 @@ const TodoListPage = () => {
       <ContentContainer>
         <div>
           <h2>Todo</h2>
-          {todoItems.map((todo) => (
+          {todoItems.map((todo: TodoItem) => (
             <TodoItem todo={todo} key={todo.id} />
           ))}
         </div>
         <div>
           <h2>Done</h2>
-          {doneItems.map((todo) => (
+          {doneItems.map((todo: TodoItem) => (
             <TodoItem todo={todo} key={todo.id} />
           ))}
         </div>
