@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks";
 import { addTodo } from "../redux/modules/todoReducer";
 
 const TodoInput = () => {

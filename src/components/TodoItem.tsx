@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { deleteTodo, toggleTodo } from "../redux/modules/todoReducer";
 
-const TodoItem = ({ todo }) => {
+interface TodoItemProps {
+  todo: TodoItem;
+}
+
+const TodoItem = ({ todo }: TodoItemProps) => {
   const dispatch = useDispatch();
 
   return (
